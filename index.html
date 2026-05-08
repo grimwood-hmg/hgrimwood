@@ -41,6 +41,30 @@
     width: 100%;
   }
 
+  .hero {
+    position: relative;
+    margin-bottom: 3rem;
+    min-height: 420px;
+  }
+
+  .portrait-wrap {
+    position: absolute;
+    left: 0;
+    top: 8.75rem;
+    width: 250px;
+    background: #111;
+  }
+
+  .portrait {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--rule);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    filter: grayscale(100%) contrast(1.05);
+  }
+
   .kicker {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -68,11 +92,17 @@
     font-weight: 900;
     line-height: 0.95;
     letter-spacing: -0.02em;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
+    max-width: none;
   }
   h1 em {
     font-style: italic;
     color: var(--amber-light);
+  }
+
+  .surname {
+    display: block;
+    margin-left: calc(250px + 2rem);
   }
 
   .bio {
@@ -81,8 +111,28 @@
     color: var(--ink2);
     line-height: 1.8;
     margin-bottom: 3rem;
+    clear: both;
   }
   .bio p + p { margin-top: 1.1em; }
+
+  .proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    margin-bottom: 3rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .proof span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink2);
+    white-space: nowrap;
+  }
 
   .areas {
     border-top: 1px solid var(--rule);
@@ -149,35 +199,80 @@
   }
 
   @media (max-width: 480px) {
-    .areas { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hero {
+      min-height: unset;
+      margin-bottom: 3rem;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: 100%;
+      max-width: 240px;
+      margin: 2rem 0 0 0;
+    }
+
+    h1 {
+      max-width: 100%;
+    }
+
+    .surname {
+      margin-left: 0;
+    }
+
+    .areas {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
   }
 </style>
 </head>
 <body>
 
 <main>
-  <p class="kicker">AV &amp; Production</p>
+  <div class="hero">
+    <p class="kicker">Studio Systems &amp; Creative Production</p>
 
-  <h1>Harrison<br><em>Grimwood</em></h1>
+    <h1>
+      Harrison
+      <span class="surname"><em>Grimwood</em></span>
+    </h1>
+
+    <div class="portrait-wrap">
+      <img class="portrait" src="portrait.jpg" alt="Portrait of Harrison Grimwood">
+    </div>
+  </div>
 
   <div class="bio">
-    <p>I work at the intersection of creative practice and technical systems — keeping production environments running, helping people make things, and building the processes that make both sustainable.</p>
-    <p>My background spans studio operations, journalism, and education. That combination shapes how I approach every environment I work in: with attention to reliability, a bias toward clear communication, and an instinct for finding the friction that slows people down.</p>
-    <p>Currently: studio ops at a community maker space.</p>
+    <p>I work at the intersection of creative work and technical systems, keeping production environments running, helping people make things, and building the workflows that make both sustainable.</p>
+
+    <p>My background spans studio operations, journalism, and education. That combination shapes how I approach the environments I work in: with attention to reliability, clear communication, and an instinct for finding the friction that slows people down.</p>
+
+    <p>Currently: supporting audio, video, photography, and fabrication spaces at a public innovation center.</p>
+  </div>
+
+  <div class="proof">
+    <span>100+ workshops delivered</span>
+    <span>12+ workshops designed and improved</span>
+    <span>Multi-space public production environments</span>
+    <span>Pro Tools Certified Instructor</span>
+    <span>Dante Level 1 &amp; 2 Certified</span>
+    <span>Award-winning journalist</span>
   </div>
 
   <div class="areas">
     <div>
       <div class="area-label">Studio &amp; AV Operations</div>
-      <div class="area-text">Audio, video, photography, fabrication — multi-environment operations and real-time troubleshooting.</div>
+      <div class="area-text">Audio, video, photography, and fabrication — multi-space operations and real-time troubleshooting.</div>
     </div>
     <div>
       <div class="area-label">Instruction &amp; Enablement</div>
-      <div class="area-text">Workshop development, onboarding design, and technical education for all experience levels.</div>
+      <div class="area-text">Workshops, orientations, and technical instruction built around accessibility and independence.</div>
     </div>
     <div>
       <div class="area-label">Multimedia Production</div>
-      <div class="area-text">Content creation across audio, photo, and video — from capture through post-production.</div>
+      <div class="area-text">Audio, photo, and video production from capture through post.</div>
     </div>
     <div>
       <div class="area-label">Journalism</div>
@@ -188,7 +283,7 @@
   <div class="contact">
     <a href="mailto:grimwood.hmg@gmail.com">grimwood.hmg@gmail.com</a>
     <a href="https://www.linkedin.com/in/harrison-g-23a5498a/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://www.instagram.com/anonymousgasgiant/" target="_blank" rel="noopener">Instagram</a>
+    <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
   </div>
 </main>
 
