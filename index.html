@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harrison Grimwood</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d0c0a;
+    --ink: #f0ead8;
+    --ink2: #a89f8a;
+    --ink3: #6b6355;
+    --amber: #c98a1a;
+    --amber-light: #e8a82e;
+    --rule: rgba(240,234,216,0.1);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(3rem, 10vw, 7rem) 2rem clamp(3rem, 8vw, 5rem);
+    width: 100%;
+  }
+
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--amber);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .kicker::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--amber);
+    flex-shrink: 0;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 9vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--amber-light);
+  }
+
+  .bio {
+    font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+    font-weight: 400;
+    color: var(--ink2);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  .bio p + p { margin-top: 1.1em; }
+
+  .areas {
+    border-top: 1px solid var(--rule);
+    padding-top: 2.5rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+  }
+  .area-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .area-text {
+    font-size: 0.9rem;
+    color: var(--ink3);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .contact {
+    border-top: 1px solid var(--rule);
+    padding-top: 2.5rem;
+  }
+  .contact a {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink2);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .contact a::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--amber);
+    flex-shrink: 0;
+  }
+  .contact a:hover { color: var(--amber-light); }
+
+  footer {
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+  footer span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink3);
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 480px) {
+    .areas { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <p class="kicker">AV &amp; Production</p>
+
+  <h1>Harrison<br><em>Grimwood</em></h1>
+
+  <div class="bio">
+    <p>I work at the intersection of creative practice and technical systems — keeping production environments running, helping people make things, and building the processes that make both sustainable.</p>
+    <p>My background spans studio operations, journalism, and education. That combination shapes how I approach every environment I work in: with attention to reliability, a bias toward clear communication, and an instinct for finding the friction that slows people down.</p>
+  </div>
+
+  <div class="areas">
+    <div>
+      <div class="area-label">Studio &amp; AV Operations</div>
+      <div class="area-text">Audio, video, photography, fabrication — multi-environment operations and real-time troubleshooting.</div>
+    </div>
+    <div>
+      <div class="area-label">Instruction &amp; Enablement</div>
+      <div class="area-text">Workshop development, onboarding design, and technical education for all experience levels.</div>
+    </div>
+    <div>
+      <div class="area-label">Multimedia Production</div>
+      <div class="area-text">Content creation across audio, photo, and video — from capture through post-production.</div>
+    </div>
+    <div>
+      <div class="area-label">Journalism</div>
+      <div class="area-text">Investigative reporting, deadline-driven writing, and multimedia storytelling.</div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <a href="mailto:grimwood.hmg@gmail.com">grimwood.hmg@gmail.com</a>
+  </div>
+</main>
+
+<footer>
+  <span>Harrison Grimwood</span>
+</footer>
+
+</body>
+</html>
